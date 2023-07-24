@@ -1,6 +1,5 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import argparse
-import os
 import os.path as osp
 
 from mmdet.engine.hooks.utils import trigger_visualization_hook
@@ -63,10 +62,10 @@ def parse_args():
         choices=['none', 'pytorch', 'slurm', 'mpi'],
         default='none',
         help='job launcher')
-    parser.add_argument('--local_rank', type=int, default=0)
+    # parser.add_argument('--local_rank', type=int, default=0)
     args = parser.parse_args()
-    if 'LOCAL_RANK' not in os.environ:
-        os.environ['LOCAL_RANK'] = str(args.local_rank)
+    # if 'LOCAL_RANK' not in os.environ:
+    #     os.environ['LOCAL_RANK'] = str(args.local_rank)
     return args
 
 
