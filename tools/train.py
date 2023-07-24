@@ -6,6 +6,7 @@ import os.path as osp
 from mmengine.config import Config, DictAction
 from mmengine.logging import print_log
 from mmengine.runner import Runner
+from torch.distributed.elastic.multiprocessing.errors import record
 
 from mmyolo.registry import RUNNERS
 from mmyolo.utils import is_metainfo_lower
@@ -50,7 +51,7 @@ def parse_args():
 
     return args
 
-
+@record
 def main():
     args = parse_args()
 
