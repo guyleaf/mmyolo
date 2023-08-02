@@ -18,7 +18,7 @@ torchrun \
     --rdzv-backend "c10d" \
     --master-addr="$MASTER_ADDR" \
     --master-port="$PORT" \
-    "$(dirname "$0")/train.py" \
+    "$(dirname "$0")/test.py" \
     "$CONFIG" \
     "$CHECKPOINT" \
     --launcher pytorch \
