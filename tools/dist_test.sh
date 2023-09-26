@@ -16,8 +16,7 @@ torchrun \
     --nproc-per-node "$GPUS" \
     --rdzv-id "$JOB_ID" \
     --rdzv-backend "c10d" \
-    --master-addr="$MASTER_ADDR" \
-    --master-port="$PORT" \
+    --rdzv-endpoint "$MASTER_ADDR:$PORT" \
     "$(dirname "$0")/test.py" \
     "$CONFIG" \
     "$CHECKPOINT" \
