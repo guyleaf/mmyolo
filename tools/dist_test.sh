@@ -12,11 +12,11 @@ MASTER_ADDR=${MASTER_ADDR:-"127.0.0.1"}
 PYTHONPATH="$(dirname "$0")/..:$PYTHONPATH" \
 torchrun \
     --nnodes "$NNODES" \
-    --node_rank "$NODE_RANK" \
-    --nproc_per_node "$GPUS" \
-    --rdzv_id "$JOB_ID" \
-    --rdzv_backend "c10d" \
-    --rdzv_endpoint "$MASTER_ADDR:$PORT" \
+    --node-rank "$NODE_RANK" \
+    --nproc-per-node "$GPUS" \
+    --rdzv-id "$JOB_ID" \
+    --rdzv-backend "c10d" \
+    --rdzv-endpoint "$MASTER_ADDR:$PORT" \
     "$(dirname "$0")/test.py" \
     "$CONFIG" \
     "$CHECKPOINT" \
